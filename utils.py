@@ -50,7 +50,7 @@ def nextTableState(table):  # it seems to be working properly when looped
     return new_table
 
 
-def render(board): # brother gpt got me going with this tkinter
+def render(board):
     root = tk.Tk()
     root.title("Jogo da Vida")
 
