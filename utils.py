@@ -21,7 +21,7 @@ def render(table):
     for lines in table:
         print(lines)
 
-def nextTableState(table):
+def nextTableState(table): # it seems to be working properly when looped
     """
     rules for updating the table:
     - cell becomes 0 if has 0 or 1 neighbours and is 1.
