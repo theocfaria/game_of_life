@@ -23,15 +23,15 @@ def render(table):
 
 def nextTableState(table):
     """
-    Atualiza uma tabela de células com base nas regras fornecidas:
-    - Célula se torna 0 se tiver 0 ou 1 vizinhos iguais a 1 e ela mesma for 1.
-    - Célula permanece 1 se tiver 2 ou 3 vizinhos iguais a 1 e ela mesma for 1.
-    - Célula se torna 0 se tiver mais de 3 vizinhos iguais a 1 e ela mesma for 1.
-    - Célula se torna 1 se for 0 e tiver exatamente 3 vizinhos iguais a 1.
+    rules for updating the table:
+    - cell becomes 0 if has 0 or 1 neighbours and is 1.
+    - cell stays 1 if has 2 or 3 neighbours and is 1.
+    - cell becomes 0 if has more than 3 neighbours and is 1.
+    - cell becomes 1 if is 0 and has exactly 3 neighbours.
     """
     lines = len(table)
     columns = len(table[0])
-    new_table = [row[:] for row in table]  # cópia de segurança
+    new_table = [row[:] for row in table]  # just a copy
     
     neighbours = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 
