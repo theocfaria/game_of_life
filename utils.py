@@ -13,13 +13,16 @@ def randomState(height, width):
     table_state = deadState(height, width)
     for i, lines in enumerate(table_state):
         for j, items in enumerate(lines):
-            if random.random() >= 0.6:
+            if random.random() >= 0.5:
                 table_state[i][j] = 1
     return table_state
 
 def render(table):
-    for lines in table:
+    if not hasattr(table, '__iter__'):
+        raise TypeError("Expected an iterable, got {0}".format(type(table)))
+    for lines in list(table):
         print(lines)
+
 
 def nextTableState(table): # it seems to be working properly when looped
     """

@@ -1,4 +1,4 @@
-from utils import nextTableState
+from utils import *
 
 def testingUnit(initial_table, expected_table):
     if nextTableState(initial_table) == expected_table:
@@ -9,3 +9,6 @@ def testingUnit(initial_table, expected_table):
         print(expected_table)
         print("Actual:")
         print(nextTableState(initial_table))
+
+table = randomState(20, 20)
+testingUnit(table, nextTableState(table))
